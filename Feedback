@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Feedback</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #e6f2ff;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 900px;
+      margin: 40px auto;
+      background-color: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      text-align: center;
+      color: #004d99;
+      transition: all 0.3s ease-in-out;
+    }
+
+    h1:hover {
+      color: #0077e6;
+      text-shadow: 0 0 10px #3399ff, 0 0 20px #66ccff;
+    }
+
+    .subject-block {
+      margin-top: 30px;
+      background-color: #f0f8ff;
+      padding: 20px;
+      border-left: 5px solid #3399ff;
+      border-radius: 6px;
+    }
+
+    .subject-block h3 {
+      margin-top: 0;
+      color: #004d99;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .subject-block h3:hover {
+      color: #0077e6;
+      text-shadow: 0 0 8px #3399ff, 0 0 15px #66ccff;
+    }
+
+    label {
+      display: block;
+      margin-top: 12px;
+      font-weight: bold;
+      color: #004d99;
+    }
+
+    select, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 6px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      box-sizing: border-box;
+    }
+
+    textarea {
+      resize: vertical;
+      height: 80px;
+    }
+
+    .btn {
+      background-color: #3399ff;
+      color: white;
+      padding: 12px 24px;
+      margin-top: 30px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      display: block;
+      width: 100%;
+      font-size: 16px;
+      transition: background-color 0.3s ease-in-out;
+    }
+
+    .btn:hover {
+      background-color: #007acc;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Subject-wise Assignment Feedback</h1>
+
+    <form id="feedbackForm">
+      <div class="subject-block">
+        <h3>Entrepreneurship</h3>
+        <label>Marks Obtained: 81 / 100</label>
+        <label>Did you understand the topic?</label>
+        <select name="entrepreneurship_understood" required>
+          <option value="">Select</option>
+          <option value="Yes">Yes</option>
+          <option value="No">No</option>
+        </select>
+        <label>What improvements do you need?</label>
+        <textarea name="entrepreneurship_improvement" placeholder="Write your suggestions..."></textarea>
+      </div>
+
+      <div class="subject-block">
+        <h3>Cyber Security</h3>
+        <label>Marks Obtained: 87 / 100</label>
+        <label>Did you understand the topic?</label>
+        <select name="cyber_understood" required>
+          <option value="">Select</option>
+          <option value="Yes">Yes</option>
+          <option value="No">No</option>
+        </select>
+        <label>What improvements do you need?</label>
+        <textarea name="cyber_improvement" placeholder="Write your suggestions..."></textarea>
+      </div>
+
+      <div class="subject-block">
+        <h3>ADA (Analysis & Design of Algorithms)</h3>
+        <label>Marks Obtained: 79 / 100</label>
+        <label>Did you understand the topic?</label>
+        <select name="ada_understood" required>
+          <option value="">Select</option>
+          <option value="Yes">Yes</option>
+          <option value="No">No</option>
+        </select>
+        <label>What improvements do you need?</label>
+        <textarea name="ada_improvement" placeholder="Write your suggestions..."></textarea>
+      </div>
+
+      <div class="subject-block">
+        <h3>DBMS</h3>
+        <label>Marks Obtained: 90 / 100</label>
+        <label>Did you understand the topic?</label>
+        <select name="dbms_understood" required>
+          <option value="">Select</option>
+          <option value="Yes">Yes</option>
+          <option value="No">No</option>
+        </select>
+        <label>What improvements do you need?</label>
+        <textarea name="dbms_improvement" placeholder="Write your suggestions..."></textarea>
+      </div>
+
+      <button type="submit" class="btn">Submit Feedback</button>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById("feedbackForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+      alert("Your subject-wise feedback has been submitted successfully!");
+      document.getElementById("feedbackForm").reset();
+    });
+  </script>
+</body>
+</html>
