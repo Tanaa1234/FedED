@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Student Dashboard - Quizzes</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f5f7fa;
+      display: flex;
+    }
+
+    .sidenav {
+      width: 230px;
+      background-color: #002b5b;
+      color: white;
+      min-height: 100vh;
+      padding-top: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .sidenav img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 10px;
+    }
+
+    .sidenav h3 {
+      margin-bottom: 20px;
+      font-size: 18px;
+    }
+
+    .sidenav a {
+      color: white;
+      text-decoration: none;
+      margin: 10px 0;
+      display: block;
+      text-align: center;
+      width: 100%;
+      padding: 10px 0;
+      transition: background 0.3s;
+    }
+
+    .sidenav a:hover {
+      background-color: #01407f;
+    }
+
+    .sidenav .bottom-link {
+      margin-top: auto;
+      margin-bottom: 20px;
+    }
+
+    .main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .navbar {
+      background-color: #002b5b;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 30px;
+      color: white;
+    }
+
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+    }
+
+    .nav-left span {
+      font-weight: bold;
+      font-size: 22px;
+      color: white;
+    }
+
+    .nav-left a {
+      text-decoration: none;
+      color: white;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    .nav-left a:hover {
+      color: #ccc;
+    }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+    }
+
+    .nav-right a {
+      text-decoration: none;
+      color: white;
+      font-weight: 500;
+    }
+
+    .nav-right i {
+      cursor: pointer;
+      font-size: 18px;
+    }
+
+    .content {
+      padding: 30px;
+    }
+
+    h2 {
+      color: #00458b;
+      margin-bottom: 20px;
+    }
+
+    .card-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      padding: 20px;
+      transition: transform 0.2s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card h3 {
+      color: #002b5b;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      margin-bottom: 5px;
+      font-size: 14px;
+    }
+
+    .card .due {
+      font-weight: bold;
+      color: #d9534f;
+    }
+
+    .card .status {
+      font-weight: bold;
+    }
+
+    .status.pending {
+      color: #d9534f;
+    }
+
+    .status.completed {
+      color: #5cb85c;
+    }
+
+    .status.missed {
+      color: #f0ad4e;
+      font-weight: bold;
+    }
+
+    .submit-btn {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 8px 12px;
+      background-color: #002b5b;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      font-size: 14px;
+      transition: background-color 0.3s;
+    }
+
+    .submit-btn:hover {
+      background-color: #01407f;
+    }
+  </style>
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class="sidenav">
+    <img src="pexels.jpg" alt="Student Photo">
+    <h3>Marco</h3>
+    <a href="#">Attendance</a>
+    <a href="#">Feedback</a>
+    <a href="#">Result</a>
+    <a href="#" class="bottom-link">Get Help</a>
+  </div>
+
+  <div class="main">
+    <div class="navbar">
+      <div class="nav-left">
+        <span>My Portal</span>
+        <a href="#">Assignments</a>
+        <a href="#">Quizzes</a>
+      </div>
+      <div class="nav-right">
+        <a href="#">Logout</a>
+        <i class="fas fa-cog"></i>
+        <i class="fas fa-bell"></i>
+      </div>
+    </div>
+
+    <div class="content">
+      <h2>Your Quizzes</h2>
+      <div class="card-container">
+        <div class="card">
+          <h3>DBMS Quiz 1</h3>
+          <p>Topic: ER Diagrams</p>
+          <p>Due: <span class="due">April 8, 2025</span></p>
+          <p>Status: <span class="status pending">Pending</span></p>
+          <a class="submit-btn" href="#">Start Quiz</a>
+        </div>
+
+        <div class="card">
+          <h3>Cybersecurity Quiz</h3>
+          <p>Topic: Password Security</p>
+          <p>Due: <span class="due">April 4, 2025</span></p>
+          <p>Status: <span class="status completed">Completed</span></p>
+        </div>
+
+        <div class="card">
+          <h3>ADA Quiz</h3>
+          <p>Topic: Sorting Algorithms</p>
+          <p>Due: <span class="due">April 11, 2025</span></p>
+          <p>Status: <span class="status pending">Pending</span></p>
+          <a class="submit-btn" href="#">Start Quiz</a>
+        </div>
+
+        <div class="card">
+          <h3>Entrepreneurship Quiz</h3>
+          <p>Topic: Startup Funding</p>
+          <p>Due: <span class="due">April 1, 2025</span></p>
+          <p>Status: <span class="status missed">Missed</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
